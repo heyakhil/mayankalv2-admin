@@ -1,0 +1,1 @@
+[17-Nov-2019 15:30:40 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mayankal/public_html/admin/assets/connect.php on line 8
