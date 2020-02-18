@@ -33,6 +33,8 @@
 
 
         <li><a class="app-menu__item" href="withdraw.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Withdraw Request</span></a></li>
+        <li><a class="app-menu__item" href="WritePost.php"><i class='fa fa-edit' style='font-size:24px'></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp;WritePost</span></a></li>
+        
         <li><a class="app-menu__item" href="profile.php"><i class="fa fa-user fa-lg"></i><span class="app-menu__label">&nbsp;&nbsp;&nbsp;Profile</span></a></li>
 
        
