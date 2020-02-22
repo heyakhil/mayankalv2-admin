@@ -10,13 +10,8 @@
     <meta property="twitter:creator" content="@pratikborsadiya">
     <!-- Open Graph Meta-->
     <meta property="og:type" content="website">
-<<<<<<< HEAD
     <meta property="og:site_name" content="Vali Admin">
     <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
-=======
-    <meta property="og:site_name" content="Mayankal">
-    <meta property="og:title" content="Mayankal - Free Bloggin Community">
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
@@ -39,7 +34,6 @@
 
 
 </head>
-<<<<<<< HEAD
   <body class="app sidebar-mini">
     <!-- Navbar-->
     <?php   $id=$_SESSION['id'];
@@ -49,15 +43,6 @@
           $row=mysqli_fetch_assoc($run); 
           echo $row['profile_pic'];
           echo "akhil"
-=======
-  <body class="app sidebar-mini" style="overflow: hidden;">
-    <!-- Navbar-->
-    <?php  
-          $id=$_SESSION['id'];
-          $sql1="SELECT * FROM `author` WHERE `id`='$id'";
-          $run=mysqli_query($conn,$sql1);
-          $row=mysqli_fetch_assoc($run); 
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
     ?>
     <?php include 'author_sidebar.php'; ?>
     <!-- for data of author -->
@@ -65,11 +50,7 @@
     <main class="app-content">
       <div class="app-title">
         <div>   
-<<<<<<< HEAD
           <h1><i class='fa fa-edit' style='font-size:24px'></i> Write Post</h1>
-=======
-          <h1><i class='fa fa-edit' style='font-size:20px'></i> Write Post</h1>
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
           <p>&nbsp &nbsp Give your best</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
@@ -77,16 +58,11 @@
           <li class="breadcrumb-item"><a href="WritePost.php">Write Post</a></li>
         </ul>
       </div>
-<<<<<<< HEAD
     <!-- start -->
     <!-- <div class="fluid-container" style="margin-left: 200px; margin-right: 70px;" > -->
   <!-- <div style="margin-right:500px; margin-left:200px;"> -->
     <div class="row">
       <div class="col-lg-8" style="margin:-20px;">
-=======
-    <div class="row">
-      <div class="col-lg-8">
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
         <div class="form-group">
           <form action="../assets/write_post.php" method="POST">
           <h3>Title</h3>
@@ -168,7 +144,6 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         
         
         
@@ -177,12 +152,6 @@
  
  </div>
 </div>
-=======
-      </div> 
-    </div>
-   </div>
-  </div>
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
 <!-- End Right-side -->
   <!-- <?php 
 
@@ -199,7 +168,6 @@
           <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>No. of Words</u></b> :</span> <?php echo $row['min_word']; ?></p>
           <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Description</u></b> :</span> <?php echo $row['descrip']; ?></p>
           <?php
-<<<<<<< HEAD
       }
   } else {
       echo "0 results";
@@ -211,13 +179,6 @@
   <!-- </div> -->
 
 
-=======
-          }
-      } else {
-          echo "";
-      }
-    ?> -->
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
   </div> 
     </main>
   
@@ -252,12 +213,12 @@
     </script>
     <script type="text/javascript">
       if(document.location.hostname == 'pratikborsadiya.in') {
-      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      	ga('create', 'UA-72504830-1', 'auto');
-      	ga('send', 'pageview');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-72504830-1', 'auto');
+        ga('send', 'pageview');
       }
     </script>
   </body>
