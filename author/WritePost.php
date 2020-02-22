@@ -62,7 +62,7 @@
     <!-- <div class="fluid-container" style="margin-left: 200px; margin-right: 70px;" > -->
   <!-- <div style="margin-right:500px; margin-left:200px;"> -->
     <div class="row">
-      <div class="col-lg-8" style="margin:-20px;">
+      <div class="col-lg-8" style="margin-top:-20px;">
         <div class="form-group">
           <form action="../assets/write_post.php" method="POST">
           <h3>Title</h3>
