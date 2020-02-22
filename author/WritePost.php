@@ -62,7 +62,7 @@
     <!-- <div class="fluid-container" style="margin-left: 200px; margin-right: 70px;" > -->
   <!-- <div style="margin-right:500px; margin-left:200px;"> -->
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-lg-8" style="margin:-20px;">
         <div class="form-group">
           <form action="../assets/write_post.php" method="POST">
           <h3>Title</h3>
@@ -78,7 +78,7 @@
       <!--  Right Side-->
       <div class="col-lg-1"></div>
 
-    <div class="col-lg-3" style="margin-top: 55px;">
+    <div class="col-lg-3" style="margin-top: 35px;">
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
