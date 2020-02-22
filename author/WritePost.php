@@ -1,5 +1,6 @@
 <?php include 'check1.php';       ?>
 <?php  include '../assets/connect.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,7 +45,6 @@
     ?>
     <?php include 'author_sidebar.php'; ?>
     <!-- for data of author -->
-   
     <main class="app-content">
       <div class="app-title">
         <div>   
@@ -60,9 +60,9 @@
     <div class="row">
       <div class="col-lg-8" style="margin-top:-40px;">
         <div class="form-group">
-          <form action="../assets/write_post.php" method="POST">
+          <form action="../assets/auth_order_process.php" method="POST">
           <h3>Title</h3>
-          <input type="text" class="form-control" id="usr" placeholder="Enter the title" name="title">
+          <input type="text" class="form-control" autocomplete="off" id="usr" placeholder="Enter the title" name="title">
           <hr>
             <textarea class="ckeditor" name="editor"></textarea><br> 
             <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
@@ -75,6 +75,26 @@
       <div class="col-lg-1"></div>
 
     <div class="col-lg-3" style="margin-top: 35px;">
+      <div class="form-group">
+        <label for="orders">Select Your Orders:</label>
+        <select class="form-control" id="orders">
+          <option>--Your Orders--</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+          <option>4</option>
+        </select>
+      </div>
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -147,14 +167,13 @@
 <!-- End Right-side -->
  
     <?php 
+      $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
+      $result = mysqli_query($conn, $sql);
 
-  $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-      // output data of each row
-      while($row = mysqli_fetch_assoc($result)) {
-          ?>
+      if (mysqli_num_rows($result) > 0) {
+          // output data of each row
+          while($row = mysqli_fetch_assoc($result)) {
+        ?>
           <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Catagory</u></b> :</span> <?php echo strtoupper($row['post_cat']); ?></p>
           <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Order Id</u></b> :</span> <?php echo $row['order_id']; ?></p>
           <p style="font-size: 20px;"><span style="font-size: 25px; color: red;"><b><u>Notes</u></b> :</span> <?php echo $row['imp_not']; ?></p>
