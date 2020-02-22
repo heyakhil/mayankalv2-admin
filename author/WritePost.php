@@ -10,13 +10,8 @@
     <meta property="twitter:creator" content="@pratikborsadiya">
     <!-- Open Graph Meta-->
     <meta property="og:type" content="website">
-<<<<<<< HEAD
-    <meta property="og:site_name" content="Vali Admin">
-    <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
-=======
     <meta property="og:site_name" content="Mayankal">
     <meta property="og:title" content="Mayankal - Free Bloggin Community">
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
@@ -39,17 +34,6 @@
 
 
 </head>
-<<<<<<< HEAD
-  <body class="app sidebar-mini">
-    <!-- Navbar-->
-    <?php   $id=$_SESSION['id'];
-
-          $sql1="SELECT * FROM `author` WHERE `id`='$id'";
-          $run=mysqli_query($conn,$sql1);
-          $row=mysqli_fetch_assoc($run); 
-          echo $row['profile_pic'];
-          echo "akhil"
-=======
   <body class="app sidebar-mini" style="overflow: hidden;">
     <!-- Navbar-->
     <?php  
@@ -57,7 +41,6 @@
           $sql1="SELECT * FROM `author` WHERE `id`='$id'";
           $run=mysqli_query($conn,$sql1);
           $row=mysqli_fetch_assoc($run); 
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
     ?>
     <?php include 'author_sidebar.php'; ?>
     <!-- for data of author -->
@@ -65,11 +48,7 @@
     <main class="app-content">
       <div class="app-title">
         <div>   
-<<<<<<< HEAD
           <h1><i class='fa fa-edit' style='font-size:24px'></i> Write Post</h1>
-=======
-          <h1><i class='fa fa-edit' style='font-size:20px'></i> Write Post</h1>
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
           <p>&nbsp &nbsp Give your best</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
@@ -77,16 +56,9 @@
           <li class="breadcrumb-item"><a href="WritePost.php">Write Post</a></li>
         </ul>
       </div>
-<<<<<<< HEAD
-    <!-- start -->
-    <!-- <div class="fluid-container" style="margin-left: 200px; margin-right: 70px;" > -->
-  <!-- <div style="margin-right:500px; margin-left:200px;"> -->
+
     <div class="row">
-      <div class="col-lg-8" style="margin:-20px;">
-=======
-    <div class="row">
-      <div class="col-lg-8">
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
+      <div class="col-lg-8" style="margin-top:-40px;">
         <div class="form-group">
           <form action="../assets/write_post.php" method="POST">
           <h3>Title</h3>
@@ -167,24 +139,14 @@
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
           </div>
-        </div>
-<<<<<<< HEAD
-        
-        
-        
-  </div> 
-</div>
- 
+        </div> 
+    </div> 
+  </div>
  </div>
 </div>
-=======
-      </div> 
-    </div>
-   </div>
-  </div>
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
 <!-- End Right-side -->
-  <!-- <?php 
+ 
+    <?php 
 
   $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
   $result = mysqli_query($conn, $sql);
@@ -199,25 +161,16 @@
           <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>No. of Words</u></b> :</span> <?php echo $row['min_word']; ?></p>
           <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Description</u></b> :</span> <?php echo $row['descrip']; ?></p>
           <?php
-<<<<<<< HEAD
-      }
-  } else {
-      echo "0 results";
-  }
-
-
-   ?> -->
-    
-  <!-- </div> -->
-
-
-=======
           }
-      } else {
-          echo "";
-      }
-    ?> -->
->>>>>>> 83a167a3e4e1c1b79927887cd63f19d8006822d4
+          } else {
+              echo "";
+          }
+        ?> 
+  
+    
+
+
+
   </div> 
     </main>
   
