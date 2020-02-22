@@ -56,9 +56,6 @@
           <li class="breadcrumb-item"><a href="WritePost.php">Write Post</a></li>
         </ul>
       </div>
-    <!-- start -->
-    <!-- <div class="fluid-container" style="margin-left: 200px; margin-right: 70px;" > -->
-  <!-- <div style="margin-right:500px; margin-left:200px;"> -->
     <div class="row">
       <div class="col-lg-8">
         <div class="form-group">
@@ -76,7 +73,7 @@
       <!--  Right Side-->
       <div class="col-lg-1"></div>
 
-    <div class="col-lg-3" style="margin-top: 55px;">
+    <div class="col-lg-3" style="margin-top: 35px;">
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
