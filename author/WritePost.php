@@ -1,5 +1,8 @@
 <?php include 'check1.php';       ?>
-<?php  include '../assets/connect.php'; ?>
+<?php  include '../assets/connect.php'; 
+       include '../assets/data_set.php'; 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +38,7 @@
 
 
 </head>
-  <body class="app sidebar-mini" style="overflow: hidden;">
+  <body class="app sidebar-mini">
     <!-- Navbar-->
     <?php  
           $id=$_SESSION['id'];
@@ -77,22 +80,21 @@
     <div class="col-lg-3" style="margin-top: 35px;">
       <div class="form-group">
         <label for="orders">Select Your Orders:</label>
-        <select class="form-control" id="orders">
-          <option>--Your Orders--</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
-          <option>4</option>
+        <select class="form-control" id="orders" name="auth_orders">
+          <option selected>--Your Orders--</option>
+            <?php 
+              $sql = "SELECT * FROM author_orders WHERE `auth_uid`='$uid'";
+              $result = mysqli_query($conn, $sql);
+              if (mysqli_num_rows($result) > 0) {
+                  // output data of each row
+                  while($row = mysqli_fetch_assoc($result)) {
+                      echo '<option value='.$row['order_id'].'>'.$row['post_cat'].'</option>';
+                  }
+              } else {
+                  echo "0 results";
+              }
+
+             ?>
         </select>
       </div>
       <div class="panel-group" id="accordion">
@@ -227,5 +229,23 @@
         ga('send', 'pageview');
       }
     </script>
+
+<script>  
+ $(document).ready(function(){  
+      $('#orders').change(function(){  
+           var brand_id = $(this).val();  
+           // $.ajax({  
+           //      url:"load_data.php",  
+           //      method:"POST",  
+           //      data:{brand_id:brand_id},  
+           //      success:function(data){  
+           //           $('#show_product').html(data);  
+           //      }  
+                
+           // }); 
+           console.log(brand_id);
+      });  
+ });  
+ </script>  
   </body>
 </html>
