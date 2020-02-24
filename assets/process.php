@@ -23,7 +23,7 @@
 				$run=mysqli_query($conn,$sql);
 				if($row=mysqli_fetch_assoc($run)){
 					$_SESSION['user']=$user;
-					$_SESSION['id']=$row['id'];
+					$_SESSION['id']=$row['auth_id'];
 					$_SESSION['status']="author10052"; //fixed random id of the author for the login security
 					header('location:../author/index.php');
 					$q=1;

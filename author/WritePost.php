@@ -1,7 +1,7 @@
-<?php include 'check1.php';       ?>
+
 <?php  include '../assets/connect.php'; 
        include '../assets/data_set.php'; 
-
+       echo $uid;
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,7 @@
       <div class="col-lg-1"></div>
 
     <div class="col-lg-3" style="margin-top: 35px;">
-      <div class="form-group">
+      <div class="form-group" style="width: 100%;">
         <label for="orders">Select Your Orders:</label>
         <select class="form-control" id="orders" name="auth_orders">
           <option selected>--Your Orders--</option>
@@ -88,82 +88,19 @@
               if (mysqli_num_rows($result) > 0) {
                   // output data of each row
                   while($row = mysqli_fetch_assoc($result)) {
-                      echo '<option value='.$row['order_id'].'>'.$row['post_cat'].'</option>';
+                      echo '<option value='.$row['order_id'].'>'.strtoupper($row['post_cat']).'</option>';
                   }
               } else {
                   echo "0 results";
               }
-
+              
              ?>
         </select>
       </div>
-      <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Category</a>
-            </h4>
-          </div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Order Id</a>
-            </h4>
-          </div>
-          <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">No. of Words</a>
-            </h4>
-          </div>
-          <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Description</a>
-            </h4>
-          </div>
-          <div id="collapse4" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Notes</a>
-            </h4>
-          </div>
-          <div id="collapse5" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-          </div>
-        </div> 
-    </div> 
-  </div>
+      <div class="row" id="show_product">  
+        
+      </div>  
+  
  </div>
 </div>
 <!-- End Right-side -->
@@ -233,17 +170,18 @@
 <script>  
  $(document).ready(function(){  
       $('#orders').change(function(){  
-           var brand_id = $(this).val();  
-           // $.ajax({  
-           //      url:"load_data.php",  
-           //      method:"POST",  
-           //      data:{brand_id:brand_id},  
-           //      success:function(data){  
-           //           $('#show_product').html(data);  
-           //      }  
+           var order_id = $(this).val();  
+           $.ajax({  
+                url:"../assets/load_data.php",  
+                method:"POST",  
+                data:{order_id:order_id},  
+                success:function(data){  
+                     $('#show_product').html(data);  
+
+                }  
                 
-           // }); 
-           console.log(brand_id);
+           }); 
+           
       });  
  });  
  </script>  
