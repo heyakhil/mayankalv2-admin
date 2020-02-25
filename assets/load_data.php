@@ -18,7 +18,7 @@ $output = '';
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Category</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">----Category----</a>
             </h4>
           </div>
           <div id="collapse1" class="panel-collapse collapse">
@@ -29,7 +29,7 @@ $output = '';
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Order Id</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">----Order Id----</a>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
@@ -40,7 +40,7 @@ $output = '';
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">No. of Words</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">----No. of Words----</a>
             </h4>
           </div>
           <div id="collapse3" class="panel-collapse collapse">
@@ -51,7 +51,7 @@ $output = '';
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Description</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">----Description----</a>
             </h4>
           </div>
           <div id="collapse4" class="panel-collapse collapse">
@@ -62,7 +62,7 @@ $output = '';
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Notes</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">----Notes----</a>
             </h4>
           </div>
           <div id="collapse5" class="panel-collapse collapse">
