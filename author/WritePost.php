@@ -1,3 +1,4 @@
+
 <?php  
 include '../assets/connect.php'; 
 include '../assets/data_set.php';        
@@ -15,6 +16,7 @@ include '../assets/data_set.php';
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mayankal">
     <meta property="og:title" content="Mayankal - Free Bloggin Community">
+
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
@@ -29,6 +31,7 @@ include '../assets/data_set.php';
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">-->
+
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   
@@ -38,6 +41,7 @@ include '../assets/data_set.php';
 </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
+
     <?php  
           $id=$_SESSION['id'];
           $sql1="SELECT * FROM `author` WHERE `id`='$id'";
@@ -46,6 +50,7 @@ include '../assets/data_set.php';
     ?>
     <?php include 'author_sidebar.php'; ?>
     <!-- for data of author -->
+
     <main class="app-content">
       <div class="app-title">
         <div>   
