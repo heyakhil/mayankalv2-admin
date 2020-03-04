@@ -21,9 +21,11 @@ if(isset($_POST['submit'])){
     if(empty($title) || empty($post) || empty($order_id)){
         header('Location: ../author/WritePost.php');
     }else{
-    	echo getUserDetail($orderof_user)[0];
+    	$naam = getUserDetail($orderof_user)['name'];
+    	$product = date("Ymdhis");
+    	echo $product;
         // $sql = "INSERT INTO `author_order_complete`(`name`, `product_id`, `uid`, `orderof_uid`, `title`, `post`, `date`)
-        //  VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])";
+        //  VALUES ('$naam','$',[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])";
 
         // if (mysqli_query($conn, $sql)) {
         //     echo "New record created successfully";
