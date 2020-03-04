@@ -14,7 +14,8 @@ $output = '';
       $result = mysqli_query($conn, $sql);  
       while($row = mysqli_fetch_array($result))  
       {  
-           $output = '<div class="panel-group" id="accordion" style="width: 100%;">
+         echo '<div id="demo" data-set="'.$row['order_id'].'"></div>';
+      $output = '<div class="panel-group" id="accordion" style="width: 100%;">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
@@ -44,7 +45,7 @@ $output = '';
             </h4>
           </div>
           <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">400-500 Words 
+            <div class="panel-body"><b>400-500</b> Words <br> Or <b>5000 to 6000</b> Character.
             </div>
           </div>
         </div>

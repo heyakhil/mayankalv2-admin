@@ -1,7 +1,6 @@
-
-<?php  include '../assets/connect.php'; 
-       include '../assets/data_set.php'; 
-       echo $uid;
+<?php  
+include '../assets/connect.php'; 
+include '../assets/data_set.php';        
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +29,10 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">-->
-  <script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
@@ -68,9 +66,10 @@
           <input type="text" class="form-control" autocomplete="off" id="usr" placeholder="Enter the title" name="title">
           <hr>
             <textarea class="ckeditor" name="editor"></textarea><br> 
-            <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
-          <input type="hidden" name="customer" value="<?php echo $customer; ?>">
-          <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:833px;">
+            <strong>Letter count: <span id="letterCount"></span></strong>
+            <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
+            <input type="hidden" name="customer" value="<?php echo $customer; ?>">
+            <input type="submit" id="btn" class="btn btn-primary" value="Submit" name="submit" style="width:833px;">
           </form>
         </div>
       </div>
@@ -80,7 +79,7 @@
     <div class="col-lg-3" style="margin-top: 35px;">
       <div class="form-group" style="width: 100%;">
         <label for="orders">Select Your Orders:</label>
-        <select class="form-control" id="orders" name="auth_orders">
+        <select class="form-control" id="orders" onclick="myFunc()" name="auth_orders">
           <option selected>--Your Orders--</option>
             <?php 
               $sql = "SELECT * FROM author_orders WHERE `auth_uid`='$uid'";
@@ -104,68 +103,48 @@
  </div>
 </div>
 <!-- End Right-side -->
- 
-    <?php 
-      $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
-      $result = mysqli_query($conn, $sql);
-
-      if (mysqli_num_rows($result) > 0) {
-          // output data of each row
-          while($row = mysqli_fetch_assoc($result)) {
-        ?>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Catagory</u></b> :</span> <?php echo strtoupper($row['post_cat']); ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Order Id</u></b> :</span> <?php echo $row['order_id']; ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px; color: red;"><b><u>Notes</u></b> :</span> <?php echo $row['imp_not']; ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>No. of Words</u></b> :</span> <?php echo $row['min_word']; ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Description</u></b> :</span> <?php echo $row['descrip']; ?></p>
-          <?php
-          }
-          } else {
-              echo "";
-          }
-        ?> 
-  </div> 
-    </main>
+</div> 
+</main>
   
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <!-- Essential javascripts for application to work-->
-  
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/main.js"></script>
-    <!-- The javascript plugin to display page loading on top-->
-    <script src="../js/plugins/pace.min.js"></script>
-    <!-- Page specific javascripts-->
-    <!-- Google analytics script-->
-    <script>
-     $(document).ready(function(){
-      // check change event of the text field
-      $("#username").keyup(function(){
-      // get text username text field value
-      var username = $("#username").val();
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Essential javascripts for application to work-->
+<script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/main.js"></script>
+<!-- The javascript plugin to display page loading on top-->
+<script src="../js/plugins/pace.min.js"></script>
+<!-- Page specific javascripts-->
+<!-- Google analytics script-->
+<script>
+ $(document).ready(function(){
+  // check change event of the text field
+  $("#username").keyup(function(){
+  // get text username text field value
+  var username = $("#username").val();
 
-      // check username name only if length is greater than or equal to 3
-      if(username.length >= 3)
-      {
-      $("#status").html('<img src="../images/loader.gif" />Checking availability...');
-      // check username
-      $.post("../assets/checkuser.php", {username: username}, function(data, status){
-      $("#status").html(data);
-      });
-      }
-      });
-      });
-    </script>
-    <script type="text/javascript">
-      if(document.location.hostname == 'pratikborsadiya.in') {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-72504830-1', 'auto');
-        ga('send', 'pageview');
-      }
-    </script>
+  // check username name only if length is greater than or equal to 3
+  if(username.length >= 3)
+  {
+  $("#status").html('<img src="../images/loader.gif" />Checking availability...');
+  // check username
+  $.post("../assets/checkuser.php", {username: username}, function(data, status){
+  $("#status").html(data);
+  });
+  }
+  });
+  });
+</script>
+<script type="text/javascript">
+  if(document.location.hostname == 'pratikborsadiya.in') {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-72504830-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
 
 <script>  
  $(document).ready(function(){  
@@ -177,13 +156,59 @@
                 data:{order_id:order_id},  
                 success:function(data){  
                      $('#show_product').html(data);  
-
                 }  
                 
            }); 
+          
            
       });  
  });  
  </script>  
+
+ <script type="text/javascript">CKEDITOR.replace('editor',{
+   height: '300',
+   maxlength: '400' /* this is the important part */
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+   $("#btn").attr('disabled', 'disabled');
+   var editAbstract=CKEDITOR.instances.editor;
+
+   editAbstract.on("key",function(e) {      
+                    //e.editor.config.maxlength       
+      var minLength=5; //5000 min number of character threshold that author must reach
+         
+         //process of counting the character.
+      e.editor.document.on("keyup",function() {KeyUp(e.editor,minLength,"letterCount");});
+      e.editor.document.on("paste",function() {KeyUp(e.editor,minLength,"letterCount");});
+      e.editor.document.on("blur",function() {KeyUp(e.editor,minLength,"letterCount");});
+   },editAbstract.element.$);
+
+   //function to handle the count check
+   function KeyUp(editorID,minLength,infoID) {
+
+      //If you want it to count all html code then just remove everything from and after '.replace...'
+      var text=editorID.getData().replace(/<("[^"]*"|'[^']*'|[^'">])*>/gi, '').replace(/^\s+|\s+$/g, '');
+      $("#"+infoID).text(text.length);
+
+      if(text.length >= minLength) {   
+        $("#btn").attr('disabled', false);
+         // alert("You cannot have more than "+maxLimit+" characters");         
+         // editorID.setData(text.substr(0,maxLimit));
+         // editor.cancel();
+      } 
+   }
+  
+   
+});
+
+</script>
+  <script type="text/javascript">
+    function myFunc(){
+    var cookieValue = document.getElementById("demo").getAttribute("data-set"); 
+    console.log(cookieValue);    
+  }
+  </script>
   </body>
 </html>
