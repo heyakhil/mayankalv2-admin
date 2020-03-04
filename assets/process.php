@@ -14,8 +14,8 @@
 		    // output data of each row
 		   	$_SESSION['name'] = $user;
 		   	$_SESSION['id'] = $row['id'];
-			$_SESSION['status'] = "admin10052";
-			 $q=1; 
+			$_SESSION['status'] = "admin10052"; //fixed random id of the admin for the login security
+			$q=1; 
 			
 		   	header("location:../admin/index.php");
 		} else{
@@ -23,8 +23,8 @@
 				$run=mysqli_query($conn,$sql);
 				if($row=mysqli_fetch_assoc($run)){
 					$_SESSION['user']=$user;
-					$_SESSION['id']=$row['id'];
-					$_SESSION['status']="author10052";
+					$_SESSION['id']=$row['auth_id'];
+					$_SESSION['status']="author10052"; //fixed random id of the author for the login security
 					header('location:../author/index.php');
 					$q=1;
 					
