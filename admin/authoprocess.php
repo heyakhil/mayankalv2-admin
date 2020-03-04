@@ -10,7 +10,7 @@
         $date=date("y");
         $randum=rand(23456784,91237487);
         $auth_id="auth".$date.$randum;
-
+// hello guys
 
         $sql="INSERT INTO `author`(`name`, `email`, `username`, `password`, `gender`, `mobile`, `auth_id`) VALUES ('$name','$email','$username','$password','$gender','$mobilenum','$auth_id')";
         mysqli_query($conn,$sql);
