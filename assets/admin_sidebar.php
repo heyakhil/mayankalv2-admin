@@ -3,6 +3,7 @@
   session_start();
   if(!isset($_SESSION['name'])){
     header('location:../index.php');
+    
   }
 ?>
     <header class="app-header"><a class="app-header__logo" href="https://mayankal.ml">Mayankal</a>
