@@ -88,7 +88,7 @@
                 </div>
                 <div class="tile-footer">
                    
-                    <button class="btn btn-primary" type="submit" ><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>
+                    <button class="btn btn-primary" name="submit" type="submit" ><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>
                 </div>
               </form>
             </div>

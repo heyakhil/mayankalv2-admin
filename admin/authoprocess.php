@@ -1,6 +1,7 @@
 <?php include '../assets/connect.php';   ?>
 <?php include '../check.php'; error_reporting(0); ?>
 <?php
+   if(isset($_POST['submit'])){
         $name=$_POST['name'];
         $email=$_POST['email'];
         $username=$_POST['username'];
@@ -10,10 +11,10 @@
         $date=date("y");
         $randum=rand(23456784,91237487);
         $auth_id="auth".$date.$randum;
-// hello guys
-
         $sql="INSERT INTO `author`(`name`, `email`, `username`, `password`, `gender`, `mobile`, `auth_id`) VALUES ('$name','$email','$username','$password','$gender','$mobilenum','$auth_id')";
         mysqli_query($conn,$sql);
-     
         header('location:addAuthor.php');
+    }else{
+                header('location:../index.php');
+    }
 ?>

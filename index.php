@@ -48,7 +48,7 @@ error_reporting(0);
                   <input type="checkbox" id="check"><span class="label-text">Stay Signed in</span>
                 </label>
               </div>
-              <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
+              <p class="semibold-text mb-2"><a href="#" data-toggle="modal" data-target="#myModal1">Forgot Password ?</a></p>
             </div>
           </div>
           <div class="form-group btn-container">
@@ -56,6 +56,41 @@ error_reporting(0);
           </div>
         </form>
       </div>
+      <div class="container">
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal1" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		        	<h4 class="modal-title">Forgot Password</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		         <form action="forgot_process.php" method="post">
+					  <div class="form-group">
+					    <label for="exampleInputEmail1">Email address</label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" name="email" placeholder="Enter email">
+					  </div>
+            <div class="form-group">
+					    <label for="exampleInputPassword1">New Password</label>
+					    <input type="password" class="form-control" name="newpassword" id="exampleInputPassword1" required placeholder="New Password">
+					  </div>
+            <div class="form-group">
+					    <label for="exampleInputPassword1">Confirm New Password</label>
+					    <input type="password" class="form-control" name="confirmpassword" id="exampleInputPassword1" required placeholder="Confirm New Password">
+					  </div>
+					  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+				</form>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
     </section>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.3.1.min.js"></script>
