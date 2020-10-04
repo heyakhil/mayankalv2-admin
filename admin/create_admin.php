@@ -14,7 +14,7 @@
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <title>Add Authors - Mayankal</title>
+    <title>Create Admin- Mayankal</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-dashboard"></i> Add The Authors</h1>
+          <h1><i class="fa fa-dashboard"></i> Create Admin</h1>
           <p>Start a beautiful journey here</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
@@ -41,58 +41,30 @@
       <div class="row">
         <div class="col-md-6">
           <div class="tile">
-            <h3 class="tile-title">Authors Registration</h3>
+            <h3 class="tile-title">Admin Registration</h3>
             <div class="tile-body">
-              <form action="authoprocess.php" method="post">
+              <form action="admin_register_process.php" method="post">
                 <div class="form-group">
-                  <label class="control-label">Name</label>
-                  <input class="form-control" type="text" name="name"  placeholder="Enter full name" required>
+                  <label class="control-label">User Name</label>
+                  <input class="form-control" type="text" name="username" placeholder="Enter user name" required>
                 </div>
                 <div class="form-group">
-                  <label class="control-label">Email</label>
-                  <input class="form-control" type="email" name="email" placeholder="Enter email address" required>
+                  <label class="control-label">Mobile Number</label>
+                  <input class="form-control" type="number" name="mobilenumber" placeholder="Enter mobile number" required>
                 </div>
                 <div class="form-group">
-                  <label class="control-label">Username</label>
-                  <input class="form-control" type="text" placeholder="Enter username" id="username" name="username"  autocomplete="off" required>
-                  <div id="status"></div>
+                  <label class="control-label">Position</label>
+                  <input class="form-control" type="text" placeholder="Enter positon:-CEO/CO-Founder" name="position"   required>
                 </div>
-                
                 <div class="form-group">
                   <label class="control-label">Password</label>
                   <input class="form-control" type="password" name="pwd" placeholder="Enter Password" required>
                 </div>
-                <div class="form-group">
-                  <label class="control-label" name="gender">Gender</label>
-                  <div class="form-check">
-                    <label class="form-check-label" required>
-                      <input class="form-check-input" type="radio" name="gender" value="Male">Male
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="radio" name="gender" value="Female">Female
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label">Mobile Number</label>
-                  <input class="form-control" type="number" name="number" placeholder="Enter Mobile Number" required>
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" required>I accept the terms and conditions
-                    </label>
-                  </div>
-                </div>
                 <div class="tile-footer">
-                   
-                    <button class="btn btn-primary" name="submit" type="submit" ><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>
+                    <button class="btn btn-primary" type="submit" name="submit" ><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>
                 </div>
               </form>
             </div>
-           
           </div>
         </div>
         </div>

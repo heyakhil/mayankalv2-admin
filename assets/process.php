@@ -1,13 +1,12 @@
 <?php include 'connect.php'; ?>
-
 <?php 
-	
+
 	session_start();
 	if (isset($_POST['submit'])) {
 		$user = $_POST['username'];
 		$pas = md5($_POST['password']);
 		$q=0;
-		$sql = "SELECT * FROM admin_log WHERE `user`='$user' AND `password`='$pas'";
+		$sql = "SELECT * FROM `admin_log` WHERE `user`='$user' AND `password`='$pas'";
 		$result = mysqli_query($conn, $sql);
 
 		if ($row=mysqli_num_rows($result) > 0) {
@@ -43,9 +42,17 @@
 		 
 		}
 
-		mysqli_close($conn);
 
 
+	}else{
+		?>
+						<script>
+
+  								alert("Enter the data");
+								location.replace("../index.php");
+						</script>
+
+				<?php
 	}
 
 
