@@ -20,8 +20,21 @@
          // delete data from withdraw table after payment is done
    
         $sql2="DELETE FROM `withdraw`  WHERE `uid`='$uid' order by 'uid' DESC limit 1";
-        mysqli_query($conn,$sql2);
-        header('location:withdraw.php');
+       if(mysqli_query($conn,$sql2)){
+        ?>
+        <script>
+            alert('Payment Completed');
+            window.location = "withdraw.php";
+        </script>
+        <?php
+       }else{
+        ?>
+        <script>
+            alert('some problem occur');
+            window.location = "withdraw.php";
+        </script>
+        <?php
+       }
     }else{
         ?>
         <script>

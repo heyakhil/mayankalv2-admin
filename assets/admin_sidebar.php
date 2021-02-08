@@ -20,12 +20,17 @@
         </li>
       </ul>
     </header>
+    <?php
+      $sql1="SELECT * FROM `admin_log` WHERE `user`='$user'";
+      $run=mysqli_query($conn,$sql1);
+      $row=mysqli_fetch_assoc($run);
+    ?>
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
         <div>
           <p class="app-sidebar__user-name"><?php echo strtoupper($user); ?></p>
-          <p class="app-sidebar__user-designation">Founder & CEO</p>
+          <p class="app-sidebar__user-designation"><?php echo $row['position']; ?></p>
         </div>
       </div>
       <ul class="app-menu">

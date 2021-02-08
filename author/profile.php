@@ -27,17 +27,16 @@
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
-    <?php   $id=$_SESSION['id'];
-
-          $sql1="SELECT * FROM `author` WHERE `id`='$id'";
-          $run=mysqli_query($conn,$sql1);
-          $row=mysqli_fetch_assoc($run); 
-          echo $row['profile_pic'];
-          echo "akhil"
-    ?>
     <?php include 'author_sidebar.php'; ?>
     <!-- for data of author -->
-   
+    <?php  echo $id=$_SESSION['id'];
+
+        $sql1="SELECT * FROM `author` WHERE `auth_id`='$id'";
+        $run=mysqli_query($conn,$sql1);
+       $row=mysqli_fetch_assoc($run);
+          echo $row['profile_pic'];
+          echo $row['email'];
+?>
     <main class="app-content">
       <div class="app-title">
         <div>

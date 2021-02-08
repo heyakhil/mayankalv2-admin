@@ -29,7 +29,7 @@
             $img=basename($_FILES['image']['name']);
             $tempname=$_FILES['image']['tmp_name'];
             move_uploaded_file($tempname,"../images/$img");
-                $sql = "UPDATE author SET profile_pic='$img' WHERE id='$id'";
+                $sql = "UPDATE `author` SET `profile_pic`='$img' WHERE `auth_id`='$id'";
 
                 if (mysqli_query($conn, $sql)) {
                     ?>
