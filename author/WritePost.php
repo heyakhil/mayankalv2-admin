@@ -72,8 +72,6 @@ include '../assets/data_set.php';
           <hr>
             <textarea class="ckeditor" name="editor"></textarea><br> 
             <strong>Letter count: <span id="letterCount"></span></strong>
-            <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
-            <input type="hidden" name="customer" value="<?php echo $customer; ?>">
             <input type="submit" id="btn" class="btn btn-primary" value="Submit" name="submit" style="width:833px;">
           </form>
         </div>
@@ -160,7 +158,7 @@ include '../assets/data_set.php';
                 method:"POST",  
                 data:{order_id:order_id},  
                 success:function(data){  
-                     $('#show_product').html(data);  
+                     $('#show_product').html(data); 
                 }  
                 
            }); 
@@ -211,8 +209,19 @@ include '../assets/data_set.php';
 </script>
   <script type="text/javascript">
     function myFunc(){
-    var cookieValue = document.getElementById("demo").getAttribute("data-set"); 
-    console.log(cookieValue);    
+      var x = document.getElementById("orders").selectedIndex;
+      var y = document.getElementById("orders").options;
+      function setCookie(name,value,days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+      setCookie('order-id', y[x].value, 1);
+      console.log("done")
   }
   </script>
   </body>
